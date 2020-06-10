@@ -11,7 +11,11 @@ echo
 if [ ! -e "/mnt/d/web" ]; then
 cd /mnt/d/ && mkdir web
 fi
+if [ ! -e "/mnt/d/web/$website" ]; then 
+echo "Fine! File existed"
+else
 cd /mnt/d/web && mkdir "$website"
+fi
 echo "      Put your index.html inside web/$website folder" 
 echo " Press Y if already inserted else press N"
 read -p $"  Yes / No:  " option
