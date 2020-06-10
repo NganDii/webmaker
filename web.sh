@@ -22,8 +22,10 @@ cd ..
 rm -rf webmakerfiles
 echo "copy this: "
 echo " cd $HOME/web/$website && bash Go.sh"
-sleep 20
-echo "Paste"
+echo " Press enter after finish copying"
+read -r yes
+echo "Paste in the next dialog... Press enter to proceed.."
+read -r yes
 nano run.sh
 cd /mnt/d/web/
 cp -r $website ~/web
@@ -37,7 +39,5 @@ cd ~
 cp -R ngrok web/$website
 cd web/$website
 chmod +x ngrok 
-chmod +x Go.sh
-chmod +x run.sh
 bash run.sh
 echo ""
