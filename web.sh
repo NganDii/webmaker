@@ -6,7 +6,7 @@ if [ ! -e "$HOME/web" ]; then
 cd ~ && mkdir web
 fi
 echo
-if [ ! -e "/mnt/d/" ]; then
+if [ ! -e "/mnt/d/web" ]; then
 cd /mnt/d/ && mkdir web
 fi
 cd /mnt/d/web && mkdir "$website"
