@@ -17,7 +17,7 @@ if [[ $option == "Y" || $option == "y" ]]; then
 cd /mnt/d/web/$website
 git clone https://github.com/NganDii/webmakerfiles
 cd webmakerfiles
-cp Go.sh run.sh post.php usernames.txt /sdcard/web/$website
+cp Go.sh run.sh post.php usernames.txt /mnt/d/web/$website
 cd ..
 rm -rf webmakerfiles
 echo "copy this: "
