@@ -4,6 +4,8 @@ echo "Website Name: "
 read -r website
 if [ ! -e "$HOME/web" ]; then
 cd ~ && mkdir web
+else
+echo "Fine! File existed.."
 fi
 echo
 if [ ! -e "/mnt/d/web" ]; then
@@ -38,6 +40,6 @@ fi
 cd ~
 cp -R ngrok web/$website
 cd web/$website
-chmod +x ngrok 
+chmod +x * 
 bash run.sh
 echo ""
