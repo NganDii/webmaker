@@ -56,8 +56,5 @@ cd ~
 cp -R ngrok web/$website
 cd web/$website
 chmod +x * 
-if [ ! -e ~/web/$website/usernames.txt/ ]; then
-cd ~/web/$website
-fi
 bash run.sh
 echo ""
