@@ -26,13 +26,9 @@ cd webmakerfiles
 cp Go.sh run.sh post.php usernames.txt /mnt/d/web/$website
 cd ..
 rm -rf webmakerfiles
-echo "copy this: "
-echo " cd $HOME/web/$website && bash Go.sh"
-echo " Press enter after finish copying"
-read -r yes
-echo "Paste in the next dialog... Press enter to proceed.."
-read -r yes
-nano run.sh
+cat <<EOF>run.sh
+cd $HOME/web/$website && bash Go.sh
+EOF
 cd /mnt/d/web/
 cp -r $website ~/web
 cd ~
