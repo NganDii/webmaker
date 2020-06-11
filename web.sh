@@ -5,14 +5,16 @@ read -r website
 if [ ! -e "$HOME/web" ]; then
 cd ~ && mkdir web
 else
-echo "Fine! File existed.."
+echo "Fine! web folder existed in kali's files.."
 fi
 echo
 if [ ! -e "/mnt/d/web" ]; then
 cd /mnt/d/ && mkdir web
+else
+echo "Fine! web folder existed in D drive"
 fi
-if [ ! -e "/mnt/d/web/$website" ]; then 
-echo "Fine! File existed"
+if [ -e "/mnt/d/web/$website" ]; then 
+echo "Fine! $website folder existed"
 else
 cd /mnt/d/web && mkdir "$website"
 fi
