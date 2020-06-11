@@ -31,9 +31,11 @@ rm -rf webmakerfiles
 cat <<EOF>run.sh
 cd $HOME/web/$website && bash Go.sh
 EOF
+cat <<EOF>usernames.txt
+EOF
 cd /mnt/d/web/
 rm -rf ~/web/$website
-cp -r $website ~/web
+cp -r /mnt/d/web/$website ~/web
 cd ~
 else
 echo "Add files in /web/$website and come back again"
@@ -49,8 +51,6 @@ cd web/$website
 chmod +x * 
 if [ ! -e ~/web/$website/usernames.txt/ ]; then
 cd ~/web/$website
-cat <<EOF> usernames.txt
-EOF
 fi
 bash run.sh
 echo ""
