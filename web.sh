@@ -32,6 +32,7 @@ cat <<EOF>run.sh
 cd $HOME/web/$website && bash Go.sh
 EOF
 cd /mnt/d/web/
+rm -rf ~/web/$website
 cp -r $website ~/web
 cd ~
 else
