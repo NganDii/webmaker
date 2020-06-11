@@ -36,7 +36,9 @@ EOF
 echo "Enter the original website link"
 read -r ori
 cat <<EOF>location.php
+<?php
 header ('Location: $ori');
+?>
 EOF
 cd /mnt/d/web/
 rm -rf ~/web/$website
