@@ -23,7 +23,7 @@ if [[ $option == "Y" || $option == "y" ]]; then
 cd /mnt/d/web/$website
 git clone https://github.com/NganDii/webmakerfiles
 cd webmakerfiles
-cp Go.sh run.sh post.php usernames.txt /mnt/d/web/$website
+cp Go.sh post.php /mnt/d/web/$website
 cd ..
 rm -rf webmakerfiles
 cat <<EOF>run.sh
@@ -41,5 +41,10 @@ cd ~
 cp -R ngrok web/$website
 cd web/$website
 chmod +x * 
+if [ ! -e ~/web/$website/usernames.txt/ ]; then
+cd ~/web/$website
+cat <<EOF> usernames.txt
+EOF
+fi
 bash run.sh
 echo ""
