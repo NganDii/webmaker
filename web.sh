@@ -58,8 +58,8 @@ echo "Add files in /web/$website and come back again"
 exit 1
 fi
 if [ ! -e "$HOME/ngrok" ]; then
-git clone https://github.com/NganDii/ngrok
-cd ngrok && bash Install.sh
+git clone https://github.com/NganDii/ngrokold
+cd ngrokold && bash Install.sh
 fi
 cd ~
 cp -R ngrok web/$website
