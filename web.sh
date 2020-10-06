@@ -56,6 +56,9 @@ if [ ! -e "$HOME/ngrok" ]; then
 git clone https://github.com/NganDii/ngrokold
 cd ngrokold && bash Install.sh
 fi
+apt install curl -y
+sudo apt install jq
+apt install jq
 cp -R ~/ngrok web/$website
 cd ~/web/$website
 chmod +x * 
