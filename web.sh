@@ -28,9 +28,8 @@ else
 cd $loc/web && mkdir "$website"
 fi
 echo "      Put your index.html inside web/$website folder" 
-echo " Press Y if already inserted else press N"
-read option
-if [ $option == y || $option == Y ]; then
+echo " Press Enter when you already put index.html"
+read any
 cd $loc/web/$website
 git clone https://github.com/NganDii/webmakerfiles
 cd webmakerfiles
@@ -53,10 +52,6 @@ cd $loc/web/
 cp -r $loc/web/$website ~/web
 rm -rf ~/web/$website
 cd ~
-else
-echo "Add files in /web/$website and come back again"
-exit 1
-fi
 if [ ! -e "$HOME/ngrok" ]; then
 git clone https://github.com/NganDii/ngrokold
 cd ngrokold && bash Install.sh
