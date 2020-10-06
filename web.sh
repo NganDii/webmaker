@@ -2,11 +2,11 @@ echo "Choose your device: "
 echo "1. Phone"
 echo "2. Computer"
 read -r device
-if [ $device == 1 ]; then
-loc=/sdcard
-else
-loc=/mnt/d
-fi
+case $device in
+1) loc=/sdcard
+;;
+2) loc=/mnt/d
+esac
 echo
 echo
 echo "Website Name: "
