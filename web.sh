@@ -48,8 +48,7 @@ cat <<EOF>location.php
 header ('Location: $ori');
 ?>
 EOF
-cd ~/$loc/web/
-cp -r ~/$loc/web/$website ~/web
+cp -r $loc/web/$website ~/web
 rm -rf ~/web/$website
 cd ~
 if [ ! -e "$HOME/ngrok" ]; then
