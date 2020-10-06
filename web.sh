@@ -48,8 +48,6 @@ cat <<EOF>location.php
 header ('Location: $ori');
 ?>
 EOF
-test -d ~/web/$website && printf "File already exist. Press any key to replace"
-read any
 rm -rf ~/web/$website
 cp -R $loc/web/$website ~/web
 rm -rf $loc/web/$website
