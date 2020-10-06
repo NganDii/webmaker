@@ -29,8 +29,8 @@ cd $loc/web && mkdir "$website"
 fi
 echo "      Put your index.html inside web/$website folder" 
 echo " Press Y if already inserted else press N"
-read -p option
-if [[ $option == "Y" || $option == "y" ]]; then
+read option
+if [ $option == y || $option == Y ]; then
 cd $loc/web/$website
 git clone https://github.com/NganDii/webmakerfiles
 cd webmakerfiles
