@@ -2,7 +2,7 @@ echo "Choose your device: "
 echo "1. Phone"
 echo "2. Computer"
 read -r device
-if [ $device == "1" ]; then
+if [ $device == 1 ]; then
 loc=/sdcard
 else
 loc=/mnt/d
